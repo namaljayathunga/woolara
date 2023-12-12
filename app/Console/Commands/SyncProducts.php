@@ -46,10 +46,10 @@ class SyncProducts extends Command
                         'description' => $product['description']
                     ]);
 
+                    //dispatch job to download image
                     DownloadProductImages::dispatch($data->id, $product['images'][0]['src']);
 
                 }
-
             }
 
             return Command::SUCCESS;

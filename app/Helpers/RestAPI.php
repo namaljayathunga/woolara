@@ -28,7 +28,7 @@ class RestAPI
                 "consumer_key" => $this->key,
                 "consumer_secret" => $this->secret,
                 "page" => 1,
-                "per_page" => 2
+                "per_page" => 15
             ], $params));
 
             return $response->json();
