@@ -194,4 +194,8 @@ return [
         // ...
     ])->toArray(),
 
+    'woocommerce_api_url' => env('WOOCOMMERCE_API_URL'),
+    'woocommerce_consumer_key' => env('WOOCOMMERCE_CONSUMER_KEY'),
+    'woocommerce_consumer_secret' => env('WOOCOMMERCE_CONSUMER_SECRET'),
+
 ];
