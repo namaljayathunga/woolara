@@ -38,8 +38,10 @@ class DownloadProductImages implements ShouldQueue
     {
         $contents = file_get_contents($this->src);
         $filename = uuid_create() . ".jpg";
-        Storage::disk("public")->put($filename, $contents);
+        $fileSaved = Storage::disk("public")->put($filename, $contents);
 
-        Product::where('id', $this->id)->update(['image_filename' => $filename]);
+        if ($fileSaved)
+            Product::where('id', $this->id)->update(['image_filename' => $filename]);
+
     }
 }
